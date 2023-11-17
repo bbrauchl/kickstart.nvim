@@ -31,6 +31,7 @@ require('lazy').setup(
   require('utils').plugins.assemble_lazy_config()
 )
 
+require('utils').mappings.load_mappings()
 
 -- [[ Basic Keymaps ]]
 
@@ -229,7 +230,7 @@ local on_attach = function(_, bufnr)
 
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-  nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
+  -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
 
   -- Lesser used LSP functionality
   nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
