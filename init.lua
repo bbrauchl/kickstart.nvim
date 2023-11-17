@@ -2,7 +2,7 @@
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 require('utils').vimrc.set_leader(' ')
--- load the mappings from the config directory
+-- load the mappings from the config directory vigoux added a commit to vigoux/neovim that referenced this issue Jan 27, 2021 
 require('utils').vimrc.load_config()
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -31,7 +31,7 @@ require('lazy').setup(
   require('utils').plugins.assemble_lazy_config()
 )
 
-require('utils').mappings.load_mappings()
+require('utils').mappings.load_general_mappings()
 
 -- [[ Basic Keymaps ]]
 

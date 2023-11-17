@@ -11,7 +11,8 @@ local my_on_attach = function(bufnr)
 
   api.config.mappings.default_on_attach(bufnr)
 
-  require('utils').mappings.load_mappings('nvim_tree_on_attach', opts)
+  -- require('utils').mappings.load_local_mappings(nvim_tree_mappings.on_attach, opts)
+  require('utils').mappings.load_plugin_event_mappings('nvim-tree', 'on_attach', opts)
 end
 
 local nvim_tree_config = {
@@ -43,7 +44,7 @@ local nvim_tree_config = {
       silent = true,
       nowait = true,
     }
-    require('utils').mappings.load_mappings("nvim_tree", opts)
+    require('utils').mappings.load_plugin_general_mappings('nvim-tree', opts)
   end,
   config = function(_, opts)
     require("nvim-tree").setup(opts)

@@ -7,7 +7,7 @@ Create a unified way to set keymaps in a more general way.
 
 local M = {}
 
-M.general = {
+M.general_mappings = {
   i = {
     -- navigate within insert mode
     ["<C-h>"] = { "<Left>", "Move left" },
@@ -77,25 +77,45 @@ M.general = {
   },
 }
 
-M.nvim_tree = {
-  plugin = true,
+M.plugin_mappings = {
+  ['nvim-tree'] = {
 
-  n = {
-    -- toggle
-    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+    general = {
+      n = {
+        -- toggle
+        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
-    -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+        -- focus
+        ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+      },
+    },
+    events = {
+
+    }
+
   },
 }
 
-M.nvim_tree_on_attach = {
-  plugin = true,
+M.plugin_on_event_mappings = {
+  ['nvim-tree'] = {
+    global = {
+      n = {
+        -- toggle
+        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
-  n = {
-    ['<C-u>'] = { require('nvim-tree.api').tree.change_root_to_parent, "nvim-tree: Parent Directory" },
-    ['<C-o>'] = { require('nvim-tree.api').tree.change_root_to_node, "nvim-tree: Change Directory" },
-  },
+        -- focus
+        ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+      },
+    },
+    events = {
+      on_attach = {
+        n = {
+          ['<C-u>'] = { function() require('nvim-tree.api').tree.change_root_to_parent() end, "nvim-tree: Parent Directory" },
+          ['<C-o>'] = { function() require('nvim-tree.api').tree.change_root_to_node() end, "nvim-tree: Change Directory" },
+        },
+      },
+    },
+  }
 }
 
 return M
