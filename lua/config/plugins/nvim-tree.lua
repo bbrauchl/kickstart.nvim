@@ -1,16 +1,16 @@
 
 local my_on_attach = function(bufnr)
   local api = require('nvim-tree.api')
-  
-  local opts = { 
+
+  local opts = {
     buffer = bufnr,
     noremap = true,
     silent = true,
     nowait = true,
   }
-  
+
   api.config.mappings.default_on_attach(bufnr)
-  
+
   require('utils').mappings.load_mappings('nvim_tree_on_attach', opts)
 end
 
@@ -36,6 +36,8 @@ local nvim_tree_config = {
   init = function()
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
+
+    vim.opt.termguicolors = true
 
     local opts = {
       silent = true,

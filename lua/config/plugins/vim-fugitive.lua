@@ -1,5 +1,5 @@
 local git_fugitive_config = {
-  'tpope/vim-rhubarb',
+  'tpope/vim-fugitive',
 }
 
 return git_fugitive_config

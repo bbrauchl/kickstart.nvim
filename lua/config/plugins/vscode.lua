@@ -26,7 +26,8 @@ local vscode_config = {
       -- Cursor = { fg=require('vscode').get_colors().vscDarkBlue, bg=requrie('vscode').get_colors().vscLightGreen, bold=true },
     }
   },
-  config = function()
+  config = function(_, opts)
+    require('vscode').setup(opts)
     require('vscode').load()
   end,
 }

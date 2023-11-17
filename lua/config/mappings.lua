@@ -93,8 +93,8 @@ M.nvim_tree_on_attach = {
   plugin = true,
 
   n = {
-    ['<C-u>'] = { require('nvim-tree.api').tree.change_root_to_parent, "Parent Directory" },
-    ['<C-o>'] = { require('nvim-tree.api').tree.change_root_to_node, "Change Directory" },
+    ['<C-u>'] = { require('nvim-tree.api').tree.change_root_to_parent, "nvim-tree: Parent Directory" },
+    ['<C-o>'] = { require('nvim-tree.api').tree.change_root_to_node, "nvim-tree: Change Directory" },
   },
 }
 
