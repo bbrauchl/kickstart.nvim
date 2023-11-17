@@ -18,14 +18,14 @@ M.load_mappings = function(section, mapping_opt)
           mapping_info.opts, opts.mode = nil, nil
 
           opts.desc = mapping_info[2]
-          vim.keymap.set(mode, keybind, mapping_info[0], opts)
+          vim.keymap.set(mode, keybind, mapping_info[1], opts)
         end
       end
     end
     
     local mappings = require('config.mappings')
 
-    if type(section) == string then
+    if type(section) == 'string' then
       mappings[section]["plugin"] = nil
       mappings = {mappings[section]}
     end
