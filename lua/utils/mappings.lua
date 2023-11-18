@@ -45,7 +45,7 @@ M.load_all_plugin_general_mappings = function(mapping_opt)
   end
 end
 
-M.load_plugin_event_mapping = function(plugin, plugin_event, mapping_opt)
+M.load_plugin_event_mappings = function(plugin, plugin_event, mapping_opt)
   local plugin_mappings_all = require('config.mappings').plugin_on_event_mappings
 
   local plugin_mappings = plugin_mappings_all[plugin] or {}
