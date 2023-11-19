@@ -308,7 +308,15 @@ cmp.setup {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete {},
+    ['<C-Space>'] = function()
+      if cmp.visible() then
+        -- require('notify')('visible')
+        cmp.abort()
+      else
+        -- require('notify')('not visible')
+        cmp.complete()
+      end
+    end,
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,

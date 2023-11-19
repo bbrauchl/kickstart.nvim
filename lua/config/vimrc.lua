@@ -31,6 +31,9 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
+-- Create 80-character column
+vim.wo.colorcolumn = '80'
+
 -- Decrease update time
 -- vim.o.updatetime = 250
 -- vim.o.timeoutlen = 300
