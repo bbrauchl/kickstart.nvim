@@ -155,7 +155,19 @@ M.plugin_mappings = {
         ['<leader>fd'] = {
           function() require('telescope.builtin').diagnostics() end, '[F]ind [D]iagnostics'
         },
-        ['<leader>f<space>'] = { function() require('telescope.builtin').resume() end, '[F]ind (previous)' },
+        ['<leader>f<space>'] = { function() require('telescope.builtin').resume() end, '[F]ind Resume' },
+        ['<leader>fc'] = { function() require('telescope.builtin').colorscheme() end, '[F]ind [C]olorscheme' },
+        ['<leader>fp'] = { function() require('telescope.builtin').builtin() end, '[F]ind [P]icker' },
+        ['<leader>ft'] = { function() require('telescope.builtin').treesitter() end, '[F]ind in [T]reesitter' },
+        ['<leader>flr'] = { function() require('telescope.builtin').lsp_references() end, '[F]ind [L]sp [R]eferences' },
+        ['<leader>fld'] = { function() require('telescope.builtin').lsp_definitions() end, '[F]ind [L]sp [D]efinitions' },
+        ['<leader>fli'] = { function() require('telescope.builtin').lsp_incoming_calls() end, '[F]ind [L]sp [I]ncoming Calls' },
+        ['<leader>flo'] = { function() require('telescope.builtin').lsp_definitions() end, '[F]ind [L]sp [O]utgoing Calls' },
+        ['<leader>flm'] = { function() require('telescope.builtin').lsp_implementations() end, '[F]ind [L]sp I[M]plementations' },
+        ['<leader>fls'] = { function() require('telescope.builtin').lsp_document_symbols() end, '[F]ind [L]sp [S]ymbols ([D]ocuent)' },
+        ['<leader>flw'] = { function() require('telescope.builtin').lsp_workspace_symbols() end, '[F]ind [L]sp Symbols ([W]orksapce)' },
+        ['<leader>fla'] = { function() require('telescope.builtin').lsp_dynamic_workspace_symbols() end, '[F]ind [L]sp Symbols ([A]ll)' },
+        ['<leader>flt'] = { function() require('telescope.builtin').lsp_type_definitions() end, '[F]ind [L]sp [T]ype Definitions' },
       },
     },
     events = {
