@@ -7,14 +7,21 @@ local M = {}
 
 M.general_mappings = {
   i = {
-    -- navigate withi:set listn insert mode
-    ["<C-h>"] = { "<Left>", "Move left" },
-    ["<C-l>"] = {
+    -- navigate within insert mode
+    -- ["<C-h>"] = { "<Left>", "Move left" },
+    -- ["<C-l>"] = {
+    --   "<Right>",
+    --   ":set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<Move right"
+    -- },
+    -- ["<C-j>"] = { "<Down>", "Move down" },
+    -- ["<C-k>"] = { "<Up>", "Move up" },
+    ["<A-h>"] = { "<Left>", "Move left" },
+    ["<A-l>"] = {
       "<Right>",
       ":set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<Move right"
     },
-    ["<C-j>"] = { "<Down>", "Move down" },
-    ["<C-k>"] = { "<Up>", "Move up" },
+    ["<A-j>"] = { "<Down>", "Move down" },
+    ["<A-k>"] = { "<Up>", "Move up" },
   },
 
 
@@ -54,10 +61,10 @@ M.general_mappings = {
 
     -- [[ Navigation Keymaps ]]
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    -- ["<C-h>"] = { "<C-w>h", "Window left" },
+    -- ["<C-l>"] = { "<C-w>l", "Window right" },
+    -- ["<C-j>"] = { "<C-w>j", "Window down" },
+    -- ["<C-k>"] = { "<C-w>k", "Window up" },
     ["<A-h>"] = { "<C-w>h", "Window left" },
     ["<A-l>"] = { "<C-w>l", "Window right" },
     ["<A-j>"] = { "<C-w>j", "Window down" },
@@ -101,7 +108,7 @@ M.general_mappings = {
 
 
   t = {
-    ["<C-x>"] = {
+    ["<A-x>"] = {
       vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true),
       "Escape terminal mode"
     },
@@ -146,8 +153,8 @@ M.plugin_mappings = {
   ['nvim-tree'] = {
     general = {
       n = {
-        -- toggle
-        ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+        -- tjoggle
+        ["<A-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
         -- focus
         ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
@@ -156,13 +163,13 @@ M.plugin_mappings = {
     events = {
       on_attach = {
         n = {
-          ['<C-u>'] = {
+          ['<A-u>'] = {
             function()
               require('nvim-tree.api').tree.change_root_to_parent()
             end,
             "nvim-tree: Parent Directory"
           },
-          ['<C-o>'] = {
+          ['<A-o>'] = {
             function()
               require('nvim-tree.api').tree.change_root_to_node()
             end,

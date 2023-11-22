@@ -4,3 +4,4 @@ local comment_config = {
 }
 
 return comment_config
+
