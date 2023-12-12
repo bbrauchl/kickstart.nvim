@@ -175,6 +175,12 @@ M.plugin_mappings = {
             end,
             "nvim-tree: Change Directory"
           },
+          ['<A-[>'] = {
+            function()
+              require('nvim-tree.api').tree.change_root_to_node()
+            end,
+            "nvim-tree: Change Directory"
+          },
         },
       },
     },
