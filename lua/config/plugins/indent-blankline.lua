@@ -1,5 +1,5 @@
 
---[[ local highlight = {
+local highlight = {
   "RainbowDelimiterRed",
   "RainbowDelimiterYellow",
   "RainbowDelimiterBlue",
@@ -7,8 +7,8 @@
   "RainbowDelimiterGreen",
   "RainbowDelimiterViolet",
   "RainbowDelimiterCyan",
-} ]]
-local highlight = {
+}
+--[[ local highlight = {
       "RainbowRed",
       "RainbowYellow",
       "RainbowBlue",
@@ -16,7 +16,7 @@ local highlight = {
       "RainbowGreen",
       "RainbowViolet",
       "RainbowCyan",
-}
+} ]]
 
 local indent_blankline_config = {
   -- Add indentation guides even on blank lines
@@ -66,7 +66,7 @@ local indent_blankline_config = {
   },
   config = function()
     local hooks = require('ibl.hooks')
-    hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    --[[ hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
         vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
         vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
         vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
@@ -74,14 +74,14 @@ local indent_blankline_config = {
         vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
         vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
         vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
-    end)
+    end) ]]
 
     require('ibl').setup(
       require('config.plugins.indent-blankline').opts
     )
 
-    vim.g.rainbow_delimiters = {highlight = highlight}
-    -- hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+    -- vim.g.rainbow_delimiters = {highlight = highlight}
+    hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
   end,
 }
 
