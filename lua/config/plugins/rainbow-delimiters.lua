@@ -1,7 +1,8 @@
 
 local rainbow_delimiters_config = {
   "hiphish/rainbow-delimiters.nvim",
-  init = function()
+  enabled = true,
+  config = function()
     local rainbow_delimiters = require('rainbow-delimiters')
     require('rainbow-delimiters.setup').setup {
       strategy = {
