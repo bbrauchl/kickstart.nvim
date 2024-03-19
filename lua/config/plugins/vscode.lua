@@ -1,6 +1,7 @@
 
 local vscode_config = {
   'Mofiqul/vscode.nvim',
+  priority = 1000,
   opts = {
     -- Alternatively set style in setup
     -- style = 'light'
